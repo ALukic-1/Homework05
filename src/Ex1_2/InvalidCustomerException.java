@@ -1,4 +1,4 @@
-package ex1;
+package Ex1_2;
 
 public class InvalidCustomerException extends Exception{
 
