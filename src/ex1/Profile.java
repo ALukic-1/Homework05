@@ -1,8 +1,14 @@
+package ex1;
+
 public class Profile{
 
     private ShippingInfo shippingInfo;
 
-    public Profile(ShippingInfo shippingInfo) {
+    public Profile(ShippingInfo shippingInfo) throws MissingShippingInfoException {
+        if (shippingInfo == null){
+            throw new  MissingShippingInfoException("Shipping Info is missing");
+        }
+
         this.shippingInfo =  shippingInfo;
 
     }

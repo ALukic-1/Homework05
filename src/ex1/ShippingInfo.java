@@ -1,3 +1,5 @@
+package ex1;
+
 public class ShippingInfo {
 
     private String city;
@@ -6,11 +8,18 @@ public class ShippingInfo {
 
 
     //Konstruktor
-    public ShippingInfo(String city, int zip, String country) {
+    public ShippingInfo(String city, int zip, String country) throws InvalidShippingInfoException{
+        if (city == null ){
+            throw new InvalidShippingInfoException("City is empty.");
+        }
         this.city = city;
+        if (zip < 1) {
+            throw new InvalidShippingInfoException("zip is not valid");
+        }
         this.zip = zip;
         this.country = country;
     }
+
 
     //Getter
     public String getCity() {
